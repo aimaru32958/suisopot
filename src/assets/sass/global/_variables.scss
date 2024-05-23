@@ -4,29 +4,31 @@
 ================================================================*/
 
 // 色
-$main-color: #000; // メインカラー
-$sub-color1: #000; // サブカラー1
-$sub-color2: #000; // サブカラー2
-$accent-color: #000; // アクセントカラー
-// $accent-color-active: ; // アクセントカラー（アクティブ）
-$text-color1: #000; // テキストカラー1
+$base-color: #FFF; // ベースカラー
+$main-color: #F4FBFD; // メインカラー
+$sub-color1: #FF8B71; // サブカラー1
+$sub-color2: #82BFED; // サブカラー2
+$sub-color3: #C6ECEC; // サブカラー3
+$text-color1: #333; // テキストカラー1
 $text-color2: #fff; // テキストカラー2
-$text-color3: #000; // テキストカラー3
+$text-color3: #6C6E6F; // テキストカラー3
 // $link-color: ; // リンクカラー
 
 // フォント
 // $ff-awesome: , sans-serif; // Font Awesome
-// $ff-en: , sans-serif; // 英字
-$ff-base: '', sans-serif; // 日本語標準
-$fz-base: 14px; // ベースフォントサイズ
-$fz-title: 14px; // タイトルフォントサイズ
-$fw-base: 500; // ベースフォントウェイト
+$ff-base: 'Noto Serif JP', sans-serif; // 日本語標準
+$ff-en: 'Lato', sans-serif; // 英字
+$ff-jp2: 'Noto Sans JP', sans-serif; // 日本語2
+$ff-jp3: 'Yomogi', sans-serif; // 日本語3
+$fz-base: 16px; // ベースフォントサイズ
+$fz-title: 24px; // タイトルフォントサイズ
+$fw-base: 400; // ベースフォントウェイト
 $lh-base: 1; // ベース行間
 
 // レイアウト
-$design-pc-width: 1280; // デザインカンプPCサイズ
-$design-sp-width: 375; // デザインカンプSPサイズ
-$inner-width: 1160px; // インナー幅サイズ(デザインカンプPCサイズ)
+$design-pc-width: 1440; // デザインカンプPCサイズ
+$design-sp-width: 390; // デザインカンプSPサイズ
+$inner-width: 360px; // インナー幅サイズ(デザインカンプsPサイズ)
 
 // ブレークポイント
 $pc-width: 1000px; // PCサイズ(以上)
