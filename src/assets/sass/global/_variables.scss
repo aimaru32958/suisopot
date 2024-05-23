@@ -1,0 +1,62 @@
+
+/*================================================================
+変数
+================================================================*/
+
+// 色
+$main-color: #000; // メインカラー
+$sub-color1: #000; // サブカラー1
+$sub-color2: #000; // サブカラー2
+$accent-color: #000; // アクセントカラー
+// $accent-color-active: ; // アクセントカラー（アクティブ）
+$text-color1: #000; // テキストカラー1
+$text-color2: #fff; // テキストカラー2
+$text-color3: #000; // テキストカラー3
+// $link-color: ; // リンクカラー
+
+// フォント
+// $ff-awesome: , sans-serif; // Font Awesome
+// $ff-en: , sans-serif; // 英字
+$ff-base: '', sans-serif; // 日本語標準
+$fz-base: 14px; // ベースフォントサイズ
+$fz-title: 14px; // タイトルフォントサイズ
+$fw-base: 500; // ベースフォントウェイト
+$lh-base: 1; // ベース行間
+
+// レイアウト
+$design-pc-width: 1280; // デザインカンプPCサイズ
+$design-sp-width: 375; // デザインカンプSPサイズ
+$inner-width: 1160px; // インナー幅サイズ(デザインカンプPCサイズ)
+
+// ブレークポイント
+$pc-width: 1000px; // PCサイズ(以上)
+$tab-width: calc(#{$pc-width} - 1px) ; // タブレットサイズ（以下）
+$sp-width: 767px; // スマホサイズ（以下）
+$dsp-width: calc(#{$design-sp-width} - 1px); // デザインスマホサイズ（以下）
+$breakpoints: (
+    // デザインカンプspサイズ以下の場合
+    "dsp": "screen and (max-width: #{$dsp-width})",
+    // スマホ以下の場合
+    "sp": "screen and (max-width: #{$sp-width})",
+    // タブレット以下の場合
+    "tab": "screen and (max-width: #{$tab-width})",
+    // タブレット以上の場合
+    "pc": "screen and (min-width: #{$pc-width})"
+)!default;
+
+// 重なり順の定義
+$layer: (
+// ローディング
+loading: 300,
+// モーダル
+modal: 100,
+// ドロワー
+drawer: 40,
+// フローティング
+floating: 30,
+// ヘッダー
+header: 20,
+// フッター
+footer: 10,
+default: 1
+);

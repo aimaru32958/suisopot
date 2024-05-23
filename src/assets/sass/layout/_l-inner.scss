@@ -1,0 +1,11 @@
+@use "../global" as *;
+
+
+
+.l-inner {
+    max-width: $inner-width;
+    width:calc(335 / $design-sp-width * 100vw);
+    margin-inline: auto;
+}
+
+

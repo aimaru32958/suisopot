@@ -1,0 +1,65 @@
+@use "./variables" as *;
+
+
+/*================================================================
+「最小値をSP時の数値」「最大値をPC時の数値」とし、
+レスポンシブデザインは「画面幅に応じた数値」とする関数
+================================================================*/
+
+// 「$design-sp-width2」はSP、「$design-pc-width2」はPCのデザインカンプ幅を設定する
+//  variables.scssに設定済み
+$design-pc-width2: 1280; // デザインカンプPCサイズ
+$design-sp-width2: 375; // デザインカンプSPサイズ
+
+/*================================================================
+「最小値をSP時の数値」「最大値をPC時の数値」とする関数
+================================================================*/
+
+@function myClamp($min, $max) {
+    $responsive-part: calc(($max - $min) / ($design-pc-width2 - $design-sp-width2));
+    $responsive-px: calc(($max - $design-pc-width2 * $responsive-part) * 1px);
+    $responsive-vw: calc($responsive-part * 100vw);
+    $min-px: calc($min * 1px);
+    $max-px: calc($max * 1px);
+
+    @return clamp($min-px, $responsive-px + $responsive-vw, $max-px);
+}
+
+/*================================================================
+「最大値をPC時の数値」とする関数
+================================================================*/
+
+@function myMin($min, $max) {
+    $responsive-part: calc(($max - $min) / ($design-pc-width2 - $design-sp-width2));
+    $responsive-px: calc(($max - $design-pc-width2 * $responsive-part) * 1px);
+    $responsive-vw: calc($responsive-part * 100vw);
+    $max-px: calc($max * 1px);
+
+    @return min($responsive-px + $responsive-vw, $max-px);
+}
+
+/*================================================================
+「最小値をSP時の数値」とする関数
+================================================================*/
+
+@function myMax($min, $max) {
+    $responsive-part: calc(($max - $min) / ($design-pc-width2 - $design-sp-width2));
+    $responsive-px: calc(($min - $design-sp-width2 * $responsive-part) * 1px);
+    $responsive-vw: calc($responsive-part * 100vw);
+    $min-px: calc($min * 1px);
+
+    @return max($min-px, $responsive-px + $responsive-vw);
+}
+
+/*================================================================
+「SP時の数値」「PC時の数値」を合わせた上で、
+最大値と最小値を設定せず「画面幅に応じた数値」とする関数
+================================================================*/
+
+@function myRsp($min, $max) {
+    $responsive-part: calc(($max - $min) / ($design-pc-width2 - $design-sp-width2));
+    $responsive-px: calc(($max - $design-pc-width2 * $responsive-part) * 1px);
+    $responsive-vw: calc($responsive-part * 100vw);
+
+    @return calc($responsive-px + $responsive-vw);
+}

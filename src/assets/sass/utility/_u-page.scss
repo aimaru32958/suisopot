@@ -1,0 +1,11 @@
+@use "../global" as *;
+
+.l-page {
+    padding-top: 80px;
+    padding-bottom: 160px;
+
+    @include mq('sp') {
+        padding-top: 60px;
+        padding-bottom: 100px;
+    }
+}
