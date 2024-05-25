@@ -1,0 +1,57 @@
+@use "../global" as *;
+
+.c-btn {
+  display: inline-block;
+  background: $sub-color1;
+  font-weight: 700;
+  line-height: 120%; /* 19.2px */
+  font-size: 16px;
+  border-radius: 40px;
+  transition: all 0.3s ease 0s;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  color: $base-color;
+  width: 160px;
+  box-shadow: 0px 0px 4px 0px rgba(83, 46, 37, 0.25);
+
+  @include mq(lpc-min) {
+    padding-block: 18.5px;
+    letter-spacing: 3.2px;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background: $base-color;
+      color: $sub-color1;
+    }
+  }
+}
+
+.c-btn__header--sp {
+  @include mq(lpc-max) {
+    width: 128px;
+    padding-block: 10px;
+    position: relative;
+    padding-inline: 5px 14px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      mask-image: url(../img/line-arrow-icon.svg);
+      mask-size: cover;
+      transition: all 0.3ss ease 0s;
+      width: 9px;
+      height: 16px;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      background-color: $text-color2;
+    }
+  }
+}
+
+.c-btn__drawer {
+  padding-block: 18.5px;
+  letter-spacing: 3.2px;
+}

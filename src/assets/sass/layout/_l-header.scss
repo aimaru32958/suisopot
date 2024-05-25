@@ -1,4 +1,174 @@
 @use "../global" as *;
 
+.l-header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background: $base-color;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: map-get($layer, "header");
+  font-family: $ff-jp2;
 
+  @include mq(lpc-min) {
+    height: 104px;
+  }
+}
 
+.l-header__inner {
+  display: flex;
+  align-items: center;
+  height: inherit;
+  max-width: 1920px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 15px;
+
+  @include mq(lpc-min) {
+    justify-content: space-between;
+    padding-inline: 45px 34px;
+  }
+}
+
+.l-header__logo {
+  img {
+    width: myClamp(151, 187);
+    height: auto;
+  }
+
+  a {
+    transition: opacity 0.3s ease 0s;
+
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+.l-header__right {
+  @include mq(lpc-min) {
+    display: flex;
+    align-items: center;
+    gap: 51px;
+  }
+}
+
+.l-header__list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: $text-color1;
+
+  li {
+    position: relative;
+
+    &:not(:last-child) {
+      &::after {
+        content: "";
+        position: absolute;
+        right: -16px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 31px;
+        width: 1px;
+        background: $text-color3;
+      }
+    }
+    a {
+      display: block;
+      transition: transform 0.3s ease 0s, transform-origin 0.3s ease 0s;
+      line-height: 104px;
+      color: $text-color3;
+
+      @media (hover: hover) {
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.l-header__ctaWrap {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.l-header__telWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+
+  @include mq(lpc-max) {
+    display: none;
+  }
+}
+
+.l-header__tel--number {
+  font-family: $ff-en;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 24px;
+  display: inline-block;
+
+  @media (min-width: 768px) {
+    //pcではtelかけられないように
+    a[href*="tel:"] {
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: url(../img/tel-icon.png) no-repeat center center / contain;
+  }
+}
+
+.l-header__tel--info {
+  font-size: 12px;
+}
+
+.l-header__btnWrap {
+  display: flex;
+  gap: 8px;
+}
+
+//ヘッダーのボタン
+.l-header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.l-header__btn--sp {
+  position: fixed;
+  top: 11px;
+  right: 50px;
+  padding-inline: 12px 8px;
+
+  @include mq(lpc-min) {
+    display: contents;
+  }
+}
+
+.is-header-hidden {
+  @include mq(lpc-max) {
+    display: none;
+  }
+}
