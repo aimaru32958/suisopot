@@ -1,0 +1,237 @@
+@use "../global" as *;
+
+.l-drawer__icon {
+  position: fixed;
+  top: 22px;
+  right: 15px;
+  z-index: map-get($layer, "drawer");
+
+  @include mq(lpc-min) {
+    display: none;
+  }
+
+  &.-active {
+    .l-drawer__icon--bar {
+      &:nth-of-type(1) {
+        top: 7px;
+        transform: rotate(30deg);
+      }
+
+      &:nth-of-type(2) {
+        display: none;
+      }
+
+      &:nth-of-type(3) {
+        top: 7px;
+        transform: rotate(-30deg);
+      }
+    }
+  }
+}
+
+.l-drawer__icon--bars {
+  display: block;
+  position: relative;
+  width: 27px;
+  height: 16.5px;
+  z-index: map-get($layer, "drawer") + 1;
+  background: $base-color;
+}
+
+.l-drawer__icon--bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 27px;
+  height: 1.5px;
+  border-radius: 4px;
+  background: $text-color1;
+  transition: transform 0.3s linear, top 0.3s linear;
+
+  &:nth-of-type(2) {
+    top: 7px;
+  }
+
+  &:nth-of-type(3) {
+    top: 15px;
+  }
+}
+
+.l-drawer__content {
+  max-width: 480px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 60px;
+  right: 0;
+  background: $base-color;
+  transform: translateX(100%);
+  transition: transform 0.3s linear, visibility 0.3s linear;
+  z-index: map-get($layer, "drawer") - 1;
+  visibility: hidden;
+  font-family: $ff-jp2;
+  height: 676px;
+
+  &.-active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.l-drawer__inner {
+  height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+//ドロワーの各ページへのリンク
+.l-drawer__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 40px;
+  background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.8) 0%,
+      rgba(255, 255, 255, 0.8) 100%
+    ),
+    linear-gradient(180deg, #007adf 0%, #00ecbc 100%);
+  padding-block: 71px 94px;
+  width: 100%;
+}
+
+.l-drawer__menuWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 49px;
+  max-width: 360px;
+  width: 100%;
+  padding-inline: 15px;
+
+  li {
+    position: relative;
+
+    color: $text-color3;
+    margin-inline: auto;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 1px;
+      background: $base-color;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    a {
+      position: relative;
+      margin-inline: auto;
+      font-size: 20px;
+      display: block;
+      width: 262px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        mask-image: url(../img/line-arrow-icon.svg);
+        mask-size: cover;
+        vertical-align: middle;
+        transition: all 0.3s ease 0s;
+        width: 9px;
+        height: 16px;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: $text-color3;
+
+        @media (hover: hover) {
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+}
+
+.l-drawer__ctaWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.l-drawer__telWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: px;
+}
+
+.l-drawer__tel--number {
+  font-family: $ff-en;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 24px;
+  display: inline-block;
+
+  @media (min-width: 768px) {
+    //pcではtelかけられないように
+    a[href*="tel:"] {
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background: url(../img/tel-icon.png) no-repeat center center / contain;
+  }
+}
+
+.l-drawer__tel--info {
+  font-size: 12px;
+}
+
+.l-drawer__btnWrap {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.l-drawer__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.l-drawer__background {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: $text-color3;
+  opacity: 0;
+  z-index: map-get($layer, "header") + 1;
+  visibility: hidden;
+
+  &.-active {
+    opacity: 0.6;
+    visibility: visible;
+  }
+}

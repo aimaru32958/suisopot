@@ -4,18 +4,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>タイトル</title>
-	<meta name="description" content="サイトの概要欄">
+	<title>SUISOPOT｜健康と美しさは、自宅で作る時代</title>
+	<meta name="description" content="SUISOPOTで、健康と美しさを。自宅で手軽にナノバブル水素水のある生活を始めてみませんか。初期手数料5,000円が無料になるキャンペン実施中！">
 	<!-- favicon -->
 	<link rel="icon" type="image/png" href="https://example.com/image.png">
 
 	<!-- OGP  -->
-	<meta property="og:title" content="サイトタイトル">
+	<meta property="og:title" content="SUISOPOT｜健康と美しさは、自宅で作る時代">
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="サイトURL">
-	<meta property="og:image" content="絶対パス">
-	<meta property="og:site_name" content="サイトタイトル">
-	<meta property="og:description" content="説明欄">
+	<meta property="og:image" content="./assets/img/ogp.png">
+	<meta property="og:site_name" content="SUISOPOT｜健康と美しさは、自宅で作る時代">
+	<meta property="og:description" content="SUISOPOTで、健康と美しさを。自宅で手軽にナノバブル水素水のある生活を始めてみませんか。初期手数料5,000円が無料になるキャンペン実施中！">
 	<meta name="twitter:card" content="summary_large_image">
 
 	<!-- Font Awesome -->
@@ -37,6 +37,86 @@
 </head>
 
 <body>
+	<!-- header -->
+	<header class="l-header js-header">
+		<div class="l-header__inner">
+			<h1 class="l-header__logo" aria-label="SUISOPOTのロゴ">
+				<a href="" aria-label="Home">
+					<img src="./assets/img/logo.svg" alt="SUISOPOTのロゴ" width="151" height="58">
+				</a>
+			</h1>
+			<div class="l-header__right">
+				<!-- ヘッダーメニュー -->
+				<nav class="l-header__nav is-header-hidden" aria-label="メインメニュー">
+					<ul class="l-header__list">
+						<li><a href="#features">特長</a></li>
+						<li><a href="#voive">お客様の声</a></li>
+						<li><a href="#price">ご利用料金</a></li>
+						<li><a href="#flow">ご利用までの流れ</a></li>
+						<li><a href="#qa">よくある質問</a></li>
+					</ul>
+				</nav>
+				<div class="l-header__ctaWrap">
+					<div class="l-header__telWrap is-header-hidden">
+						<div class="l-header__tel--number">
+							<a href="tel:03-1234-5678">03-1234-5678</a>
+						</div>
+						<p class="l-header__tel--info">平日受付 9:00-17:00(祝日を除く)</p>
+					</div>
+					<div class="l-header__btnWrap">
+						<div class="l-header__btn is-header-hidden">
+							<a href="#" class="c-btn c-btn__header" aria-label="資料請求">資料請求</a>
+						</div>
+						<div class="l-header__btn l-header__btn--sp">
+							<a href="#" class="c-btn c-btn__header c-btn__header--sp" aria-label="新規お申込">新規お申込</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- /.header-->
+
+	<button id="js-drawer-icon" class="l-header__open l-drawer__icon" aria-label="メニューを開く" type="button" aria-controls="menu" aria-expanded="false">
+		<span class="l-drawer__icon--bars">
+			<span class="l-drawer__icon--bar"></span>
+			<span class="l-drawer__icon--bar"></span>
+			<span class="l-drawer__icon--bar"></span>
+		</span>
+	</button>
+	<!-- /.drawer-icon-->
+
+	<div id="js-drawer-content" class="l-drawer__content">
+		<div class="l-drawer__inner">
+			<nav class="l-drawer__menu">
+				<ul class="l-drawer__menuWrap">
+					<li><a href="#features">特長</a></li>
+					<li><a href="#voive">お客様の声</a></li>
+					<li><a href="#price">ご利用料金</a></li>
+					<li><a href="#flow">ご利用までの流れ</a></li>
+					<li><a href="#qa">よくある質問</a></li>
+				</ul>
+			</nav>
+			<div class="l-drawer__ctaWrap">
+				<div class="l-drawer__telWrap">
+					<div class="l-drawer__tel--number"><a href="tel:03-1234-5678">03-1234-5678</a></div>
+					<p class="l-drawer__tel--info">平日受付 9:00-17:00(祝日を除く)</p>
+				</div>
+				<div class="l-drawer__btnWrap">
+					<div class="l-drawer__btn">
+						<a href="#" class="c-btn c-btn__drawer" aria-label="資料請求">資料請求</a>
+					</div>
+					<div class="l-drawer__btn">
+						<a href="#" class="c-btn c-btn__drawer" aria-label="新規お申込">新規お申込</a>
+					</div>
+				</div>
+			</div>
+			<div id="js-focus-trap" tabindex="0"></div>
+		</div>
+	</div>
+
+	<div id="js-drawer-background" class="l-drawer__background"></div>
+	<!-- /.drawer -->
 
 
 

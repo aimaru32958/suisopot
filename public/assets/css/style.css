@@ -148,15 +148,398 @@ PC  スマホ
 スマホ デザインカンプ以下
 ================================================================*/
 
+.l-header {
+	position: fixed;
+	width: 100%;
+	height: 60px;
+	background: #fff;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+	font-family: "Noto Sans JP", sans-serif;
+}
+
+.l-header__inner {
+	display: flex;
+	align-items: center;
+	height: inherit;
+	max-width: 1920px;
+	width: 100%;
+	margin-inline: auto;
+	padding-inline: 15px;
+}
+
+.l-header__logo img {
+	width: clamp(151px, 136.0828729282px + 3.9779005525vw, 187px);
+	height: auto;
+}
+
+.l-header__logo a {
+	transition: opacity 0.3s ease 0s;
+}
+
+.l-header__list {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	color: #333;
+}
+
+.l-header__list li {
+	position: relative;
+}
+
+.l-header__list li:not(:last-child)::after {
+	content: "";
+	position: absolute;
+	right: -16px;
+	top: 50%;
+	transform: translateY(-50%);
+	height: 31px;
+	width: 1px;
+	background: #6c6e6f;
+}
+
+.l-header__list li a {
+	display: block;
+	transition: transform 0.3s ease 0s, transform-origin 0.3s ease 0s;
+	line-height: 104px;
+	color: #6c6e6f;
+}
+
+.l-header__ctaWrap {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+}
+
+.l-header__telWrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
+}
+
+.l-header__tel--number {
+	font-family: "Lato", sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	position: relative;
+	padding-left: 24px;
+	display: inline-block;
+}
+
+.l-header__tel--number::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+	background: url(../img/tel-icon.png) no-repeat center center/contain;
+}
+
+.l-header__tel--info {
+	font-size: 12px;
+}
+
+.l-header__btnWrap {
+	display: flex;
+	gap: 8px;
+}
+
+.l-header__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+}
+
+.l-header__btn--sp {
+	position: fixed;
+	top: 11px;
+	right: 50px;
+	padding-inline: 12px 8px;
+}
+
 .l-inner {
 	max-width: 1440px;
 	width: 92.3076923077vw;
 	margin-inline: auto;
 }
 
+.l-drawer__icon {
+	position: fixed;
+	top: 22px;
+	right: 15px;
+	z-index: 40;
+}
+
+.l-drawer__icon.-active .l-drawer__icon--bar:nth-of-type(1) {
+	top: 7px;
+	transform: rotate(30deg);
+}
+
+.l-drawer__icon.-active .l-drawer__icon--bar:nth-of-type(2) {
+	display: none;
+}
+
+.l-drawer__icon.-active .l-drawer__icon--bar:nth-of-type(3) {
+	top: 7px;
+	transform: rotate(-30deg);
+}
+
+.l-drawer__icon--bars {
+	display: block;
+	position: relative;
+	width: 27px;
+	height: 16.5px;
+	z-index: 41;
+	background: #fff;
+}
+
+.l-drawer__icon--bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 27px;
+	height: 1.5px;
+	border-radius: 4px;
+	background: #333;
+	transition: transform 0.3s linear, top 0.3s linear;
+}
+
+.l-drawer__icon--bar:nth-of-type(2) {
+	top: 7px;
+}
+
+.l-drawer__icon--bar:nth-of-type(3) {
+	top: 15px;
+}
+
+.l-drawer__content {
+	max-width: 480px;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 60px;
+	right: 0;
+	background: #fff;
+	transform: translateX(100%);
+	transition: transform 0.3s linear, visibility 0.3s linear;
+	z-index: 39;
+	visibility: hidden;
+	font-family: "Noto Sans JP", sans-serif;
+	height: 676px;
+}
+
+.l-drawer__content.-active {
+	transform: translateX(0);
+	visibility: visible;
+}
+
+.l-drawer__inner {
+	height: 100%;
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+
+.l-drawer__menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 40px;
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), linear-gradient(180deg, #007adf 0%, #00ecbc 100%);
+	padding-block: 71px 94px;
+	width: 100%;
+}
+
+.l-drawer__menuWrap {
+	display: flex;
+	flex-direction: column;
+	gap: 49px;
+	max-width: 360px;
+	width: 100%;
+	padding-inline: 15px;
+}
+
+.l-drawer__menuWrap li {
+	position: relative;
+	color: #6c6e6f;
+	margin-inline: auto;
+}
+
+.l-drawer__menuWrap li::after {
+	content: "";
+	position: absolute;
+	width: 360px;
+	height: 1px;
+	background: #fff;
+	bottom: -14px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.l-drawer__menuWrap li a {
+	position: relative;
+	margin-inline: auto;
+	font-size: 20px;
+	display: block;
+	width: 262px;
+}
+
+.l-drawer__menuWrap li a::after {
+	content: "";
+	position: absolute;
+	-webkit-mask-image: url(../img/line-arrow-icon.svg);
+	mask-image: url(../img/line-arrow-icon.svg);
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	vertical-align: middle;
+	transition: all 0.3s ease 0s;
+	width: 9px;
+	height: 16px;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	background-color: #6c6e6f;
+}
+
+.l-drawer__ctaWrap {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.l-drawer__telWrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: px;
+}
+
+.l-drawer__tel--number {
+	font-family: "Lato", sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+	position: relative;
+	padding-left: 24px;
+	display: inline-block;
+}
+
+.l-drawer__tel--number::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+	height: 16px;
+	background: url(../img/tel-icon.png) no-repeat center center/contain;
+}
+
+.l-drawer__tel--info {
+	font-size: 12px;
+}
+
+.l-drawer__btnWrap {
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+}
+
+.l-drawer__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.l-drawer__background {
+	position: fixed;
+	top: 60px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #6c6e6f;
+	opacity: 0;
+	z-index: 21;
+	visibility: hidden;
+}
+
+.l-drawer__background.-active {
+	opacity: 0.6;
+	visibility: visible;
+}
+
+.c-btn {
+	display: inline-block;
+	background: #ff8b71;
+	font-weight: 700;
+	line-height: 120%; /* 19.2px */
+	font-size: 16px;
+	border-radius: 40px;
+	transition: all 0.3s ease 0s;
+	position: relative;
+	white-space: nowrap;
+	text-align: center;
+	color: #fff;
+	width: 160px;
+	box-shadow: 0px 0px 4px 0px rgba(83, 46, 37, 0.25);
+}
+
+.c-btn__drawer {
+	padding-block: 18.5px;
+	letter-spacing: 3.2px;
+}
+
 .l-page {
 	padding-top: 80px;
 	padding-bottom: 160px;
+}
+
+@media (hover: hover) {
+
+.l-header__logo a:hover {
+	opacity: 0.7;
+}
+
+.l-header__list li a:hover {
+	opacity: 0.7;
+}
+
+.l-drawer__menuWrap li a::after:hover {
+	opacity: 0.6;
+}
+
+.c-btn:hover {
+	background: #fff;
+	color: #ff8b71;
+}
+
+}
+
+@media (min-width: 768px) {
+
+.l-header__tel--number a[href*="tel:"] {
+	pointer-events: none;
+	cursor: default;
+	text-decoration: none;
+}
+
+.l-drawer__tel--number a[href*="tel:"] {
+	pointer-events: none;
+	cursor: default;
+	text-decoration: none;
+}
+
 }
 
 @media screen and (min-width: 1000px) {
@@ -179,6 +562,73 @@ PC  スマホ
 
 .is-dsp {
 	display: none;
+}
+
+}
+
+@media screen and (min-width: 1400px) {
+
+.l-header {
+	height: 104px;
+}
+
+.l-header__inner {
+	justify-content: space-between;
+	padding-inline: 45px 34px;
+}
+
+.l-header__right {
+	display: flex;
+	align-items: center;
+	gap: 51px;
+}
+
+.l-header__btn--sp {
+	display: contents;
+}
+
+.l-drawer__icon {
+	display: none;
+}
+
+.c-btn {
+	padding-block: 18.5px;
+	letter-spacing: 3.2px;
+}
+
+}
+
+@media screen and (max-width: 1399px) {
+
+.l-header__telWrap {
+	display: none;
+}
+
+.is-header-hidden {
+	display: none;
+}
+
+.c-btn__header--sp {
+	width: 128px;
+	padding-block: 10px;
+	position: relative;
+	padding-inline: 5px 14px;
+}
+
+.c-btn__header--sp::after {
+	content: "";
+	position: absolute;
+	-webkit-mask-image: url(../img/line-arrow-icon.svg);
+	mask-image: url(../img/line-arrow-icon.svg);
+	-webkit-mask-size: cover;
+	mask-size: cover;
+	transition: all 0.3ss ease 0s;
+	width: 9px;
+	height: 16px;
+	top: 50%;
+	right: 12px;
+	transform: translateY(-50%);
+	background-color: #fff;
 }
 
 }

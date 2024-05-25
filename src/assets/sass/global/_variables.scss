@@ -1,25 +1,24 @@
-
 /*================================================================
 変数
 ================================================================*/
 
 // 色
-$base-color: #FFF; // ベースカラー
-$main-color: #F4FBFD; // メインカラー
-$sub-color1: #FF8B71; // サブカラー1
-$sub-color2: #82BFED; // サブカラー2
-$sub-color3: #C6ECEC; // サブカラー3
+$base-color: #fff; // ベースカラー
+$main-color: #f4fbfd; // メインカラー
+$sub-color1: #ff8b71; // サブカラー1
+$sub-color2: #82bfed; // サブカラー2
+$sub-color3: #c6ecec; // サブカラー3
 $text-color1: #333; // テキストカラー1
 $text-color2: #fff; // テキストカラー2
-$text-color3: #6C6E6F; // テキストカラー3
+$text-color3: #6c6e6f; // テキストカラー3
 // $link-color: ; // リンクカラー
 
 // フォント
 // $ff-awesome: , sans-serif; // Font Awesome
-$ff-base: 'Noto Serif JP', sans-serif; // 日本語標準
-$ff-en: 'Lato', sans-serif; // 英字
-$ff-jp2: 'Noto Sans JP', sans-serif; // 日本語2
-$ff-jp3: 'Yomogi', sans-serif; // 日本語3
+$ff-base: "Noto Serif JP", sans-serif; // 日本語標準
+$ff-en: "Lato", sans-serif; // 英字
+$ff-jp2: "Noto Sans JP", sans-serif; // 日本語2
+$ff-jp3: "Yomogi", sans-serif; // 日本語3
 $fz-base: 16px; // ベースフォントサイズ
 $fz-title: 24px; // タイトルフォントサイズ
 $fw-base: 400; // ベースフォントウェイト
@@ -31,34 +30,40 @@ $design-sp-width: 390; // デザインカンプSPサイズ
 $inner-width: 360px; // インナー幅サイズ(デザインカンプsPサイズ)
 
 // ブレークポイント
+$lpc-max-width: 1399px; // 1399px以下
+$lpc-min-width: 1400px; // 1400px以上
 $pc-width: 1000px; // PCサイズ(以上)
-$tab-width: calc(#{$pc-width} - 1px) ; // タブレットサイズ（以下）
+$tab-width: calc(#{$pc-width} - 1px); // タブレットサイズ（以下）
 $sp-width: 767px; // スマホサイズ（以下）
 $dsp-width: calc(#{$design-sp-width} - 1px); // デザインスマホサイズ（以下）
 $breakpoints: (
-    // デザインカンプspサイズ以下の場合
-    "dsp": "screen and (max-width: #{$dsp-width})",
-    // スマホ以下の場合
-    "sp": "screen and (max-width: #{$sp-width})",
-    // タブレット以下の場合
-    "tab": "screen and (max-width: #{$tab-width})",
-    // タブレット以上の場合
-    "pc": "screen and (min-width: #{$pc-width})"
-)!default;
+  // デザインカンプspサイズ以下の場合
+  "dsp": "screen and (max-width: #{$dsp-width})",
+  // スマホ以下の場合
+  "sp": "screen and (max-width: #{$sp-width})",
+  // タブレット以下の場合
+  "tab": "screen and (max-width: #{$tab-width})",
+  // タブレット以上の場合
+  "pc": "screen and (min-width: #{$pc-width})",
+  // 1399px以下の場合
+  "lpc-max": "screen and (max-width: #{$lpc-max-width})",
+  // 1400px以上の場合
+  "lpc-min": "screen and (min-width: #{$lpc-min-width})"
+) !default;
 
 // 重なり順の定義
 $layer: (
-// ローディング
-loading: 300,
-// モーダル
-modal: 100,
-// ドロワー
-drawer: 40,
-// フローティング
-floating: 30,
-// ヘッダー
-header: 20,
-// フッター
-footer: 10,
-default: 1
+  // ローディング
+  loading: 300,
+  // モーダル
+  modal: 100,
+  // ドロワー
+  drawer: 40,
+  // フローティング
+  floating: 30,
+  // ヘッダー
+  header: 20,
+  // フッター
+  footer: 10,
+  default: 1
 );
