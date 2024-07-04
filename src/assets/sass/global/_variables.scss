@@ -34,7 +34,7 @@ $inner-width: 360px; // インナー幅サイズ(デザインカンプsPサイ�
 $pc-width: 1000px; // PCサイズ(以上)
 $tab-width: calc(#{$pc-width} - 1px) ; // タブレットサイズ（以下）
 $sp-width: 767px; // スマホサイズ（以下）
-$dsp-width: calc(#{$design-sp-width} - 1px); // デザインスマホサイズ（以下）
+$dsp-width: 389px; // デザインスマホサイズ（以下）
 $breakpoints: (
     // デザインカンプspサイズ以下の場合
     "dsp": "screen and (max-width: #{$dsp-width})",

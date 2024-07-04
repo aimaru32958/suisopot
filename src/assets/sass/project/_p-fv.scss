@@ -1,5 +1,190 @@
 @use "../global" as *;
 
 .p-fv {
-  // スタイルをここに記述
+  background: url(../img/wave-image-sp.svg) repeat-x bottom / contain;
+  background-color: #F4FBFD;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    background-image: url(../img/bubble.png);
+    background-repeat: no-repeat;
+    right: 1.5%;
+    top: 9%;
+    position: absolute;
+    background-size: contain;
+    width: 17px;
+    height: 70px;
+  }
+  
+  @include mq(tab) {
+    background: url(../img/wave-image.svg) no-repeat top center / cover;
+  }
+  @include mq(pc) {
+    background: url(../img/wave-image.svg) no-repeat top center / cover;
+  }
 }
+  
+
+
+.p-fv__wrap {
+
+}
+
+.p-fv__title {
+  font-size: myRsp(30, 64);
+  line-height: 1.5;
+
+  @include mq(sp) {
+    font-size: calc(30/390 * 100vw);
+  }
+
+  @include mq(pc) {
+    margin-top: 47px;
+    font-size: calc(64/1440 * 100vw);
+  }
+
+  span {
+    font-size: myRsp(25, 48);
+
+    @include mq(sp) {
+      font-size: calc(25/390 * 100vw);
+    }
+
+    @include mq(pc) {
+      font-size: calc(48/1440 * 100vw);
+    }
+
+  }
+}
+
+.p-fv__titleWrap {
+  position: absolute;
+
+  @include mq(dsp) {
+    left: 18%;
+  }
+
+  @include mq(sp) {
+    top: 0;
+    left: 23%;
+  }
+
+  @include mq(tab) {
+    display: flex;
+    align-items: center;
+    top: 10%;
+    left: 7%;
+  }
+
+  @include mq(pc) {
+    display: flex;
+    top: 6%;
+    left: 11%;
+  }
+
+  figure {
+    display: none;
+
+    @include mq(sp) {
+      display: none;
+    }
+
+    @include mq(tab) {
+      display: block;
+      width: 20%;
+    }
+
+    @include mq(pc) {
+      display: block;
+      width: calc(172/1440 * 100vw);
+      margin-right: 44px;
+    }
+  }
+
+}
+
+.p-fv__text {
+  font-family: Yomogi;
+  font-size: myRsp(24,32);
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  position: absolute;
+  top: 0;
+  right: 6%;
+
+  @include mq(sp) {
+    font-size: calc(24/390 * 100vw);
+  }
+
+  @include mq(tab) {
+    top: 10%;
+  }
+
+  @include mq(pc) {
+    font-size: calc(32/1440 * 100vw);
+    letter-spacing: 0.16em;
+    top: 5%;
+    right: 4.4%;
+  }
+
+}
+
+.p-fv__img {
+  width: myRsp(319, 692);
+  margin-left: auto;
+  display: block;
+  padding-top: 29%;
+
+  @include mq(sp) {
+    width: calc(319/390 * 100vw);
+  }
+
+  @include mq(pc) {
+    padding-top: 0;
+    width: calc(692/1440 * 100vw);
+  }
+}
+
+.p-fv__pointWrap {
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  padding-inline: 15px;
+
+  @include mq(dsp) {
+    left: 0;
+  }
+
+  @include mq(sp) {
+    flex-direction: column;
+    top: 21%;
+    left: 0;
+  }
+
+  @include mq(tab) {
+    top: 70%;
+  }
+
+  @include mq(pc) {
+    flex-direction: row;
+    top: 52%;
+    left: 2%;
+    gap: 0;
+  }
+}
+
+.p-fv__point {
+  width: myRsp(175, 271);
+
+  @include mq(dsp) {
+    width: calc(175/390 * 100vw);
+  }
+
+  @include mq(pc) {
+    width: calc(271/1440 * 100vw);
+  }
+
+}
+
